@@ -1,10 +1,22 @@
-﻿using System.Data.Entity;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.SQLite;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using Npgsql;
 
 namespace MvcMusicStore.Models
 {
+    public class MusicStoreEntitiesPostgreSqlConfiguration : DbConfiguration
+    {
+        public MusicStoreEntitiesPostgreSqlConfiguration()
+        {
+            SetProviderServices("Npgsql", Npgsql.NpgsqlServices.Instance);
+            SetDefaultConnectionFactory(new Npgsql.NpgsqlConnectionFactory());
+        }
+    }
+
+    [DbConfigurationType(typeof(MusicStoreEntitiesPostgreSqlConfiguration))]
     public class MusicStoreEntities : DbContext
     {
         public MusicStoreEntities() : base(GetConnectionString())
@@ -19,7 +31,7 @@ namespace MvcMusicStore.Models
                 .AddJsonFile("appsettings.json")
                 .AddEnvironmentVariables()
                 .Build();
-            
+
             return config.GetConnectionString("MusicStoreEntities") ?? "Data Source=MvcMusicStore.db";
         }
 

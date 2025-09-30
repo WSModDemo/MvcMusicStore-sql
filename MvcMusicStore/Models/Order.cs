@@ -1,12 +1,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace MvcMusicStore.Models
 {
     [Bind]
+    [Table("orders", Schema = "mvcmusicentities_dbo")]
     public partial class Order
     {
         [ScaffoldColumn(false)]
