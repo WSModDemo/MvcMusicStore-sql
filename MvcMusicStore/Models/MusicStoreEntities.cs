@@ -1,10 +1,21 @@
-﻿using System.Data.Entity;
-using System.Data.SQLite;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using Npgsql;
 
 namespace MvcMusicStore.Models
 {
+    public class MusicStoreEntitiesPostgreSqlConfiguration : DbConfiguration
+    {
+        public MusicStoreEntitiesPostgreSqlConfiguration()
+        {
+            SetProviderServices("Npgsql", Npgsql.NpgsqlServices.Instance);
+            SetDefaultConnectionFactory(new NpgsqlConnectionFactory());
+        }
+    }
+
+    [DbConfigurationType(typeof(MusicStoreEntitiesPostgreSqlConfiguration))]
     public class MusicStoreEntities : DbContext
     {
         public MusicStoreEntities() : base(GetConnectionString())
@@ -19,8 +30,16 @@ namespace MvcMusicStore.Models
                 .AddJsonFile("appsettings.json")
                 .AddEnvironmentVariables()
                 .Build();
-            
+
             return config.GetConnectionString("MusicStoreEntities") ?? "Data Source=MvcMusicStore.db";
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("mvcmusicentities_dbo");
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Album> Albums { get; set; }
