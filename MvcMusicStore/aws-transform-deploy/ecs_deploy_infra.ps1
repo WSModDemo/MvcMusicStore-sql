@@ -55,11 +55,11 @@ $gitignorePath = ".gitignore"
 # Defaults
 $defaults = @{
     # EC2 defaults
-    InstanceType = "t3.small"
+    InstanceType = "t3.medium"
     VolumeSize = "30"
     Region = "us-east-1"
     SubnetId = ""
-    SecurityGroupIds = "['sg-0f05596a3bb0c1015']"
+    SecurityGroupIds = "{'sg-0f05596a3bb0c1015'}"
     EC2InstanceProfile = "AWSTransform-Deploy-App-Instance-Role"
     CustomAmiId = ""
     MainBinary = "MvcMusicStore"
@@ -71,7 +71,7 @@ $defaults = @{
     PrivateSubnetIds = ""
     AlbArn = ""
     AlbSecurityGroupId = ""
-    EcsClusterName = ""
+    EcsClusterName = "AWSTransform-Cluster-1-7354ba"
     EcsSecurityGroupId = ""
     CertificateArn = ""
     AlbListenerPort = ""
