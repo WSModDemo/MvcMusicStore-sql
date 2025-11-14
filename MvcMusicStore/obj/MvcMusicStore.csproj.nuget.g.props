@@ -4,23 +4,22 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/dparnovs/.nuget/packages/</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/dparnovs/.nuget/packages/</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/packages</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/packages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.11.1</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="/Users/dparnovs/.nuget/packages/" />
+    <SourceRoot Include="/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/packages/" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)entityframework/6.5.1/buildTransitive/net6.0/EntityFramework.props" Condition="Exists('$(NuGetPackageRoot)entityframework/6.5.1/buildTransitive/net6.0/EntityFramework.props')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.systemwebadapters/1.4.0/Build/Microsoft.AspNetCore.SystemWebAdapters.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.systemwebadapters/1.4.0/Build/Microsoft.AspNetCore.SystemWebAdapters.props')" />
+    <Import Project="$(NuGetPackageRoot)/microsoft.aspnetcore.systemwebadapters/1.4.0/Build/Microsoft.AspNetCore.SystemWebAdapters.props" Condition="Exists('$(NuGetPackageRoot)/microsoft.aspnetcore.systemwebadapters/1.4.0/Build/Microsoft.AspNetCore.SystemWebAdapters.props')" />
+    <Import Project="$(NuGetPackageRoot)/entityframework/6.4.0/buildTransitive/netcoreapp3.0/EntityFramework.props" Condition="Exists('$(NuGetPackageRoot)/entityframework/6.4.0/buildTransitive/netcoreapp3.0/EntityFramework.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">/Users/dparnovs/.nuget/packages/entityframework/6.5.1</PkgEntityFramework>
-    <PkgSystem_Data_SQLite_EF6 Condition=" '$(PkgSystem_Data_SQLite_EF6)' == '' ">/Users/dparnovs/.nuget/packages/system.data.sqlite.ef6/1.0.118</PkgSystem_Data_SQLite_EF6>
-    <PkgModernizr Condition=" '$(PkgModernizr)' == '' ">/Users/dparnovs/.nuget/packages/modernizr/2.8.3</PkgModernizr>
-    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">/Users/dparnovs/.nuget/packages/jquery/3.7.0</PkgjQuery>
-    <PkgjQuery_UI_Combined Condition=" '$(PkgjQuery_UI_Combined)' == '' ">/Users/dparnovs/.nuget/packages/jquery.ui.combined/1.13.2</PkgjQuery_UI_Combined>
+    <PkgModernizr Condition=" '$(PkgModernizr)' == '' ">/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/packages/modernizr/2.8.3</PkgModernizr>
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/packages/jquery/3.7.0</PkgjQuery>
+    <PkgjQuery_UI_Combined Condition=" '$(PkgjQuery_UI_Combined)' == '' ">/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/packages/jquery.ui.combined/1.13.2</PkgjQuery_UI_Combined>
+    <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/packages/entityframework/6.4.0</PkgEntityFramework>
   </PropertyGroup>
 </Project>

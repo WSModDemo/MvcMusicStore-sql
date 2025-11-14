@@ -2,14 +2,14 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "EntityFramework/6.5.1": {
+      "EntityFramework/6.4.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "System.CodeDom": "6.0.0",
-          "System.ComponentModel.Annotations": "5.0.0",
-          "System.Configuration.ConfigurationManager": "6.0.1",
-          "System.Data.SqlClient": "4.8.6"
+          "System.CodeDom": "4.7.0",
+          "System.ComponentModel.Annotations": "4.7.0",
+          "System.Configuration.ConfigurationManager": "4.7.0",
+          "System.Data.SqlClient": "4.8.0"
         },
         "compile": {
           "lib/netstandard2.1/EntityFramework.SqlServer.dll": {
@@ -28,8 +28,25 @@
           }
         },
         "build": {
-          "buildTransitive/net6.0/EntityFramework.props": {},
-          "buildTransitive/net6.0/EntityFramework.targets": {}
+          "buildTransitive/netcoreapp3.0/EntityFramework.props": {},
+          "buildTransitive/netcoreapp3.0/EntityFramework.targets": {}
+        }
+      },
+      "EntityFramework6.Npgsql/6.4.3": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.4.0",
+          "Npgsql": "4.1.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/EntityFramework6.Npgsql.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/EntityFramework6.Npgsql.dll": {
+            "related": ".xml"
+          }
         }
       },
       "jQuery/3.7.0": {
@@ -680,6 +697,22 @@
       "Modernizr/2.8.3": {
         "type": "package"
       },
+      "Npgsql/5.0.18": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
+        },
+        "compile": {
+          "lib/net5.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -724,23 +757,20 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "System.CodeDom/6.0.0": {
+      "System.CodeDom/4.7.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.CodeDom.dll": {
+          "ref/netstandard2.0/System.CodeDom.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.CodeDom.dll": {
+          "lib/netstandard2.0/System.CodeDom.dll": {
             "related": ".xml"
           }
-        },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.ComponentModel.Annotations/5.0.0": {
+      "System.ComponentModel.Annotations/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {
@@ -753,7 +783,7 @@
           }
         }
       },
-      "System.Configuration.ConfigurationManager/6.0.1": {
+      "System.Configuration.ConfigurationManager/6.0.0": {
         "type": "package",
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "6.0.0",
@@ -773,7 +803,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.Data.SqlClient/4.8.6": {
+      "System.Data.SqlClient/4.8.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
@@ -799,18 +829,6 @@
             "assetType": "runtime",
             "rid": "win"
           }
-        }
-      },
-      "System.Data.SQLite.EF6/1.0.118": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "6.4.4"
-        },
-        "compile": {
-          "lib/netstandard2.1/System.Data.SQLite.EF6.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/System.Data.SQLite.EF6.dll": {}
         }
       },
       "System.Drawing.Common/6.0.0": {
@@ -876,7 +894,7 @@
           }
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.1": {
+      "System.Runtime.CompilerServices.Unsafe/4.6.0": {
         "type": "package",
         "compile": {
           "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
@@ -1066,31 +1084,29 @@
     }
   },
   "libraries": {
-    "EntityFramework/6.5.1": {
-      "sha512": "sQRP2lWg1i3aAGWqdliAM8zrGx7LHMUk+9/MoxUjwfTZYGMXvZ2JYZTlyTm1PqDxvn3c9E3U76TWDON7Y5+CVA==",
+    "EntityFramework/6.4.0": {
+      "sha512": "7jDmcQ3jaN5G7ZJC7Ecq161zQBs/5LqRzBdZ/I4XfmSvOwteGgNjOi30kthFador4Qjo3qUU6iOB1H04GIXrpg==",
       "type": "package",
-      "path": "entityframework/6.5.1",
+      "path": "entityframework/6.4.0",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
-        "README.md",
         "build/EntityFramework.DefaultItems.props",
         "build/EntityFramework.props",
         "build/EntityFramework.targets",
         "build/Microsoft.Data.Entity.Build.Tasks.dll",
-        "build/net6.0/EntityFramework.props",
-        "build/net6.0/EntityFramework.targets",
+        "build/netcoreapp3.0/EntityFramework.props",
+        "build/netcoreapp3.0/EntityFramework.targets",
         "buildTransitive/EntityFramework.props",
         "buildTransitive/EntityFramework.targets",
-        "buildTransitive/net6.0/EntityFramework.props",
-        "buildTransitive/net6.0/EntityFramework.targets",
+        "buildTransitive/netcoreapp3.0/EntityFramework.props",
+        "buildTransitive/netcoreapp3.0/EntityFramework.targets",
         "content/net40/App.config.install.xdt",
         "content/net40/App.config.transform",
         "content/net40/Web.config.install.xdt",
         "content/net40/Web.config.transform",
-        "entityframework.6.5.1.nupkg.sha512",
+        "entityframework.6.4.0.nupkg.sha512",
         "entityframework.nuspec",
         "lib/net40/EntityFramework.SqlServer.dll",
         "lib/net40/EntityFramework.SqlServer.xml",
@@ -1113,19 +1129,41 @@
         "tools/install.ps1",
         "tools/net40/any/ef6.exe",
         "tools/net40/any/ef6.pdb",
-        "tools/net40/win-arm64/ef6.exe",
-        "tools/net40/win-arm64/ef6.pdb",
         "tools/net40/win-x86/ef6.exe",
         "tools/net40/win-x86/ef6.pdb",
         "tools/net45/any/ef6.exe",
         "tools/net45/any/ef6.pdb",
-        "tools/net45/win-arm64/ef6.exe",
-        "tools/net45/win-arm64/ef6.pdb",
         "tools/net45/win-x86/ef6.exe",
         "tools/net45/win-x86/ef6.pdb",
-        "tools/net6.0/any/ef6.dll",
-        "tools/net6.0/any/ef6.pdb",
-        "tools/net6.0/any/ef6.runtimeconfig.json"
+        "tools/netcoreapp3.0/any/ef6.dll",
+        "tools/netcoreapp3.0/any/ef6.pdb",
+        "tools/netcoreapp3.0/any/ef6.runtimeconfig.json"
+      ]
+    },
+    "EntityFramework6.Npgsql/6.4.3": {
+      "sha512": "iZnc+FlaBaK97zGHR0KS0bnwKQ2gWPpaOoSYNHfjLZ4lr4UEPRFQnh/bpW9Q50ZbNNbDRCs+W12QyVn+sKsSwA==",
+      "type": "package",
+      "path": "entityframework6.npgsql/6.4.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/net45/App.config.install.xdt",
+        "content/net45/App.config.transform",
+        "content/net45/Web.config.install.xdt",
+        "content/net45/Web.config.transform",
+        "content/net461/App.config.install.xdt",
+        "content/net461/App.config.transform",
+        "content/net461/Web.config.install.xdt",
+        "content/net461/Web.config.transform",
+        "entityframework6.npgsql.6.4.3.nupkg.sha512",
+        "entityframework6.npgsql.nuspec",
+        "lib/net45/EntityFramework6.Npgsql.dll",
+        "lib/net45/EntityFramework6.Npgsql.xml",
+        "lib/net461/EntityFramework6.Npgsql.dll",
+        "lib/net461/EntityFramework6.Npgsql.xml",
+        "lib/netstandard2.1/EntityFramework6.Npgsql.dll",
+        "lib/netstandard2.1/EntityFramework6.Npgsql.xml",
+        "postgresql.png"
       ]
     },
     "jQuery/3.7.0": {
@@ -1827,6 +1865,26 @@
         "modernizr.nuspec"
       ]
     },
+    "Npgsql/5.0.18": {
+      "sha512": "1u4iCPKL9wtPeSUzChIbgq/BlOhvf44o7xASacdpMY7z0PbqACKpNOF0fjEn9jDV/AJl/HtPY6zk5qasQ1URhw==",
+      "type": "package",
+      "path": "npgsql/5.0.18",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/Npgsql.dll",
+        "lib/net5.0/Npgsql.xml",
+        "lib/netcoreapp3.1/Npgsql.dll",
+        "lib/netcoreapp3.1/Npgsql.xml",
+        "lib/netstandard2.0/Npgsql.dll",
+        "lib/netstandard2.0/Npgsql.xml",
+        "lib/netstandard2.1/Npgsql.dll",
+        "lib/netstandard2.1/Npgsql.xml",
+        "npgsql.5.0.18.nupkg.sha512",
+        "npgsql.nuspec",
+        "postgresql.png"
+      ]
+    },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "sha512": "9kyFSIdN3T0qjDQ2R0HRXYIhS3l5psBzQi6qqhdLz+SzFyEy4sVxNOke+yyYv8Cu8rPER12c3RDjLT8wF3WBYQ==",
       "type": "package",
@@ -1919,37 +1977,36 @@
         "version.txt"
       ]
     },
-    "System.CodeDom/6.0.0": {
-      "sha512": "CPc6tWO1LAer3IzfZufDBRL+UZQcj5uS207NHALQzP84Vp/z6wF0Aa0YZImOQY8iStY0A2zI/e3ihKNPfUm8XA==",
+    "System.CodeDom/4.7.0": {
+      "sha512": "Hs9pw/kmvH3lXaZ1LFKj3pLQsiGfj2xo3sxSzwiLlRL6UcMZUTeCfoJ9Udalvn3yq5dLlPEZzYegrTQ1/LhPOQ==",
       "type": "package",
-      "path": "system.codedom/6.0.0",
+      "path": "system.codedom/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
-        "buildTransitive/netcoreapp3.1/_._",
         "lib/net461/System.CodeDom.dll",
         "lib/net461/System.CodeDom.xml",
-        "lib/net6.0/System.CodeDom.dll",
-        "lib/net6.0/System.CodeDom.xml",
         "lib/netstandard2.0/System.CodeDom.dll",
         "lib/netstandard2.0/System.CodeDom.xml",
-        "system.codedom.6.0.0.nupkg.sha512",
+        "ref/net461/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.xml",
+        "ref/netstandard2.0/System.CodeDom.dll",
+        "ref/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.4.7.0.nupkg.sha512",
         "system.codedom.nuspec",
-        "useSharedDesignerContext.txt"
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
-    "System.ComponentModel.Annotations/5.0.0": {
-      "sha512": "dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+    "System.ComponentModel.Annotations/4.7.0": {
+      "sha512": "0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
       "type": "package",
-      "path": "system.componentmodel.annotations/5.0.0",
+      "path": "system.componentmodel.annotations/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
@@ -2026,16 +2083,16 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.componentmodel.annotations.5.0.0.nupkg.sha512",
+        "system.componentmodel.annotations.4.7.0.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
     },
-    "System.Configuration.ConfigurationManager/6.0.1": {
-      "sha512": "jXw9MlUu/kRfEU0WyTptAVueupqIeE3/rl0EZDMlf8pcvJnitQ8HeVEp69rZdaStXwTV72boi/Bhw8lOeO+U2w==",
+    "System.Configuration.ConfigurationManager/6.0.0": {
+      "sha512": "7T+m0kDSlIPTHIkPMIu6m6tV6qsMqJpvQWW2jIc2qi7sn40qxFo0q+7mEQAhMPXZHMKnWrnv47ntGlM/ejvw3g==",
       "type": "package",
-      "path": "system.configuration.configurationmanager/6.0.1",
+      "path": "system.configuration.configurationmanager/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2052,19 +2109,18 @@
         "lib/netstandard2.0/System.Configuration.ConfigurationManager.xml",
         "runtimes/win/lib/net461/System.Configuration.ConfigurationManager.dll",
         "runtimes/win/lib/net461/System.Configuration.ConfigurationManager.xml",
-        "system.configuration.configurationmanager.6.0.1.nupkg.sha512",
+        "system.configuration.configurationmanager.6.0.0.nupkg.sha512",
         "system.configuration.configurationmanager.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Data.SqlClient/4.8.6": {
-      "sha512": "2Ij/LCaTQRyAi5lAv7UUTV9R2FobC8xN9mE0fXBZohum/xLl8IZVmE98Rq5ugQHjCgTBRKqpXRb4ORulRdA6Ig==",
+    "System.Data.SqlClient/4.8.0": {
+      "sha512": "xsSRvrPbeXgD6rAqFGw1FZsMLaoDVwzgflHig8OLypDpiyb4XISChy2XOutoNsQIkBP9SJ4nSvhd8uStDU7AiA==",
       "type": "package",
-      "path": "system.data.sqlclient/4.8.6",
+      "path": "system.data.sqlclient/4.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
@@ -2137,47 +2193,10 @@
         "runtimes/win/lib/netstandard2.0/System.Data.SqlClient.xml",
         "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.dll",
         "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.xml",
-        "system.data.sqlclient.4.8.6.nupkg.sha512",
+        "system.data.sqlclient.4.8.0.nupkg.sha512",
         "system.data.sqlclient.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "System.Data.SQLite.EF6/1.0.118": {
-      "sha512": "6OqO3OA8tej0BidxjYxutfR2HlodiYAA3qU4BtYe/wQdXJ75rumiAr9inYJaxFkwgGb8jW1qyFy953ZFyCOe8A==",
-      "type": "package",
-      "path": "system.data.sqlite.ef6/1.0.118",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/net40/app.config.install.xdt",
-        "content/net40/app.config.transform",
-        "content/net40/web.config.install.xdt",
-        "content/net40/web.config.transform",
-        "content/net45/app.config.install.xdt",
-        "content/net45/app.config.transform",
-        "content/net45/web.config.install.xdt",
-        "content/net45/web.config.transform",
-        "content/net451/app.config.install.xdt",
-        "content/net451/app.config.transform",
-        "content/net451/web.config.install.xdt",
-        "content/net451/web.config.transform",
-        "content/net46/app.config.install.xdt",
-        "content/net46/app.config.transform",
-        "content/net46/web.config.install.xdt",
-        "content/net46/web.config.transform",
-        "lib/net40/System.Data.SQLite.EF6.dll",
-        "lib/net45/System.Data.SQLite.EF6.dll",
-        "lib/net451/System.Data.SQLite.EF6.dll",
-        "lib/net46/System.Data.SQLite.EF6.dll",
-        "lib/netstandard2.1/System.Data.SQLite.EF6.dll",
-        "system.data.sqlite.ef6.1.0.118.nupkg.sha512",
-        "system.data.sqlite.ef6.nuspec",
-        "tools/net40/install.ps1",
-        "tools/net45/install.ps1",
-        "tools/net451/install.ps1",
-        "tools/net46/install.ps1"
       ]
     },
     "System.Drawing.Common/6.0.0": {
@@ -2281,10 +2300,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.1": {
-      "sha512": "Zh8t8oqolRaFa9vmOZfdQm/qKejdqz0J9kr7o2Fu0vPeoH3BL1EOXipKWwkWtLT1JPzjByrF19fGuFlNbmPpiw==",
+    "System.Runtime.CompilerServices.Unsafe/4.6.0": {
+      "sha512": "HxozeSlipUK7dAroTYwIcGwKDeOVpQnJlpVaOkBz7CM4TsE5b/tKlQBZecTjh6FzcSbxndYaxxpsBMz+wMJeyw==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.5.1",
+      "path": "system.runtime.compilerservices.unsafe/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2300,7 +2319,7 @@
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -2615,37 +2634,38 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "EntityFramework >= 6.5.1",
+      "EntityFramework6.Npgsql >= 6.4.3",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.AspNetCore.Session >= 2.2.0",
       "Microsoft.AspNetCore.SystemWebAdapters >= 1.4.0",
       "Microsoft.CSharp >= 4.7.0",
       "Modernizr >= 2.8.3",
-      "System.Data.SQLite.EF6 >= 1.0.118",
+      "Npgsql >= 5.0.18",
       "jQuery >= 3.7.0",
       "jQuery.UI.Combined >= 1.13.2",
       "jQuery.Validation >= 1.19.5"
     ]
   },
   "packageFolders": {
-    "/Users/dparnovs/.nuget/packages/": {}
+    "/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/packages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dparnovs/MusicMVC/MvcMusicStore/MvcMusicStore.csproj",
+      "projectUniqueName": "/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/artifact-MvcMusicStore/artifact/sourceCode/MvcMusicStore/MvcMusicStore.csproj",
       "projectName": "MvcMusicStore",
-      "projectPath": "/Users/dparnovs/MusicMVC/MvcMusicStore/MvcMusicStore.csproj",
-      "packagesPath": "/Users/dparnovs/.nuget/packages/",
-      "outputPath": "/Users/dparnovs/MusicMVC/MvcMusicStore/obj/",
+      "projectPath": "/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/artifact-MvcMusicStore/artifact/sourceCode/MvcMusicStore/MvcMusicStore.csproj",
+      "packagesPath": "/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/packages",
+      "outputPath": "/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/artifact-MvcMusicStore/artifact/sourceCode/MvcMusicStore/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/dparnovs/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "/QNet/site-packages/atx_dot_net_strands_cli/all_local_test_output/artifact-MvcMusicStore/mde-local-nuget-source": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2655,6 +2675,13 @@
         }
       },
       "warningProperties": {
+        "noWarn": [
+          "NU1101",
+          "NU1605",
+          "NU1608",
+          "NU1701",
+          "NU1903"
+        ],
         "warnAsError": [
           "NU1605"
         ]
@@ -2669,9 +2696,9 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "EntityFramework": {
+          "EntityFramework6.Npgsql": {
             "target": "Package",
-            "version": "[6.5.1, )"
+            "version": "[6.4.3, )"
           },
           "Microsoft.AspNetCore.Identity": {
             "target": "Package",
@@ -2693,9 +2720,9 @@
             "target": "Package",
             "version": "[2.8.3, )"
           },
-          "System.Data.SQLite.EF6": {
+          "Npgsql": {
             "target": "Package",
-            "version": "[1.0.118, )"
+            "version": "[5.0.18, )"
           },
           "jQuery": {
             "target": "Package",
@@ -2729,7 +2756,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/8.0.413/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/root/.dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

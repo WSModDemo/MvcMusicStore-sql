@@ -1,0 +1,11 @@
+{
+  "MvcMusicStore": [
+    "Npgsql",
+    "Microsoft.CSharp",
+    "Microsoft.AspNetCore.SystemWebAdapters",
+    "jQuery",
+    "jQuery.UI.Combined",
+    "Modernizr",
+    "jQuery.Validation"
+  ]
+}
